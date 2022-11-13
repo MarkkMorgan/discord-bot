@@ -1,11 +1,8 @@
-import { Client, Message } from 'discord.js';
-const possibleMessages = require('./possibleMessages.json');
+import { Client } from 'discord.js';
+const messsageVariants = require('../data/messageVariants.json');
 
 export default (client: Client) => {
     client.on('messageCreate', (message) => {
-        if (possibleMessages[message.content]) {
-            message.reply(possibleMessages[message.content]);
-        }
+        if (messsageVariants[message.content.toLowerCase()] || messsageVariants[message.content.toLowerCase()]) message.reply(messsageVariants[message.content.toLowerCase()]);
     });
 }
-

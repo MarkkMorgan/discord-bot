@@ -3,6 +3,7 @@ const messsageVariants = require('../data/messageVariants.json');
 
 export default (client: Client) => {
     client.on('messageCreate', (message) => {
-        if (messsageVariants[message.content.toLowerCase()] || messsageVariants[message.content.toLowerCase()]) message.reply(messsageVariants[message.content.toLowerCase()]);
+        const messageVariant = Object.keys(messsageVariants).find(messageVariant => message.content.toLowerCase().includes(messageVariant.toLowerCase()));
+        if (messageVariant) message.reply(messsageVariants[messageVariant.toLowerCase()]);
     });
 }

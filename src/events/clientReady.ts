@@ -7,3 +7,4 @@ export default (client: Client) => {
     //     if (channel?.isTextBased()) channel.send('Wstałem');
     // });
 };
+// console.log();

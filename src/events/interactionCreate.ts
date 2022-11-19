@@ -25,3 +25,4 @@ export default (client: Client) => {
         command.execute(interaction);
     });
 };
+
